@@ -114,12 +114,14 @@ impl<INMODE, OUTMODE> Pins<USART3> for (PD8<Alternate<OUTMODE>>, PD9<Input<INMOD
     const REMAP: u8 = 0b11;
 }
 
+#[derive(Clone, Copy)]
 pub enum Parity {
     ParityNone,
     ParityEven,
     ParityOdd,
 }
 
+#[derive(Clone, Copy)]
 pub enum StopBits {
     #[doc = "1 stop bit"]
     STOP1,
@@ -131,6 +133,7 @@ pub enum StopBits {
     STOP1P5,
 }
 
+#[derive(Clone, Copy)]
 pub struct Config {
     pub baudrate: Bps,
     pub parity: Parity,
